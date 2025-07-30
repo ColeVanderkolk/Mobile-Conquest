@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cydpsyas4xtb1"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq5gwrw8sy8" path="res://Scenes+Nodes/camera.tscn" id="1_43nnm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbkbr"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_43nnm"]
+material = SubResource("StandardMaterial3D_pbkbr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgs64"]
+
+[node name="TEST_LEVEL" type="Node3D"]
+
+[node name="Camera" parent="." instance=ExtResource("1_43nnm")]
+transform = Transform3D(1, 0, 0, 0, 0.656546, 0.754286, 0, -0.754286, 0.656546, 0, 13.8685, 0.380219)
+current = true
+_drag_speed = 0.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.2609, 39.2492, -0.316036)
+light_energy = 2.371
+light_angular_distance = 18.0
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_43nnm")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.575, 0, 0, 0, 2.575, 0, 0, 0, 2.575, 0, 0.613539, -16.4902)
+mesh = SubResource("BoxMesh_xgs64")
